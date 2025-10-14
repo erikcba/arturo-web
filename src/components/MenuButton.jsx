@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-export default function MenuButton({ onClick }) {
+export default function MenuButton({ onClick, bgColor = "bg-black" }) {
   const [open, setOpen] = useState(false);
 
   const toggleMenu = () => {
@@ -13,9 +13,9 @@ export default function MenuButton({ onClick }) {
       onClick={toggleMenu}
       className={`menu-btn ${open ? "active" : ""}`}
     >
-      <span className="line"></span>
-      <span className="line"></span>
-      <span className="line"></span>
+      <span className={`line ${bgColor} ${open ? "bg-white" : ""}`}></span>
+      <span className={`line ${bgColor} ${open ? "bg-white" : ""}`}></span>
+      <span className={`line ${bgColor} ${open ? "bg-white" : ""}`}></span>
     </button>
   );
 }

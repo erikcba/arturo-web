@@ -32,7 +32,7 @@ const Home = () => {
                     </div>
                 ) : (
                     <>
-                        <Navbar abrirMenu={() => {
+                        <Navbar bgColor={"bg-white"} className={mostrarMenu ? 'text-white' : 'text-white'} abrirMenu={() => {
                             if (mostrarMenu) {
                                 cerrarMenu()
                             } else {
