@@ -1,0 +1,45 @@
+import React, { useState } from 'react'
+import Menu from '../components/Menu';
+import Navbar from '../components/Navbar';
+
+const Home = () => {
+    const [mostrarMenu, setMostrarMenu] = useState(false)
+    const [animando, setAnimando] = useState(false)
+
+    const cerrarMenu = () => {
+        setAnimando(true)
+        setTimeout(() => {
+            setMostrarMenu(false)
+            setAnimando(false)
+        }, 200)
+    }
+
+    return (
+        <div className='bg-zinc-900 h-screen flex justify-center items-center w-full'>
+
+            <>
+                <Navbar bgColor={"bg-white"} className={mostrarMenu ? 'text-white' : 'text-white'} abrirMenu={() => {
+                    if (mostrarMenu) {
+                        cerrarMenu()
+                    } else {
+                        setMostrarMenu(true)
+                    }
+                }} />
+                {
+                    mostrarMenu ? <Menu className={animando ? 'animate-slide-up' : 'animate-slide-down'} />
+                        :
+                        <>
+                            <div className='container mx-auto w-full flex flex-col gap-42'>
+                                <h1 className='text-white text-8-5 font-extralight text-lexend tracking-max leading-none'>ARTURO</h1>
+                                <h1 className='text-white text-8-5 font-extralight text-lexend tracking-max leading-none ml-auto bg-zinc-950/30 w-fit pl-4 py-4'>CASTRO/</h1>
+                            </div>
+                        </>
+                }
+            </>
+
+
+        </div>
+    )
+}
+
+export default Home
