@@ -21,7 +21,7 @@ const Contact = () => {
         }, 200)
     }
     return (
-        <>
+        <div className='bg-gris'>
             <Navbar logo={logoNegro} color={"text-white"} className={mostrarMenu ? 'text-white' : 'text-black'} abrirMenu={() => {
                 if (mostrarMenu) {
                     cerrarMenu()
@@ -46,9 +46,11 @@ const Contact = () => {
                                             /Or just say hello
                                         </p>
                                     </div>
-                                    <p className='bg-black text-white text-4xl font-medium text-lexend  leading-none w-fit text-center px-5 py-5 '>
-                                        info@arturoguitar.com
-                                    </p>
+                                    <div className='border-b-4 border-white pb-6 w-fit '>
+                                        <p className='bg-black  text-white text-4xl font-medium text-lexend  leading-none w-fit text-center px-5 py-5 '>
+                                            info@arturoguitar.com
+                                        </p>
+                                    </div>
                                     <div>
                                         <p>
                                             redes
@@ -61,7 +63,7 @@ const Contact = () => {
                     </div>
 
             }
-        </>
+        </div>
     )
 }
 

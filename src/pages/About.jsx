@@ -25,7 +25,7 @@ const About = () => {
   }
   return (
 
-    <>
+    <div className='bg-gris'>
       <Navbar logo={logoNegro} className={mostrarMenu ? 'text-white' : 'text-black'} abrirMenu={() => {
         if (mostrarMenu) {
           cerrarMenu()
@@ -72,7 +72,7 @@ const About = () => {
             <Footer />
           </>
       }
-    </>
+    </div>
 
 
   )
