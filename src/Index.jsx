@@ -15,7 +15,7 @@ const Index = () => {
                    <p>NESS</p>
                     <span className='bg-white text-black'>PASSION</span>
                    <p>IN MUSIC/</p>
-                   <p className='uppercase text-xl font-light pt-20'>Click anywhere to continue -{'>'} </p>
+                   <p className='uppercase text-xl font-light pt-20 blink'>Click anywhere to continue -{'>'} </p>
                 </div>
             </div>
         </Link>
