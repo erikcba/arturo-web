@@ -11,7 +11,7 @@ export default function MenuButton({ onClick, bgColor = "bg-black" }) {
   return (
     <button
       onClick={toggleMenu}
-      className={`menu-btn ${open ? "active" : ""}`}
+      className={`menu-btn mx-auto ${open ? "active" : ""}`}
     >
       <span className={`line ${bgColor} ${open ? "bg-white" : ""}`}></span>
       <span className={`line ${bgColor} ${open ? "bg-white" : ""}`}></span>

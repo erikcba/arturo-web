@@ -38,6 +38,12 @@
   background-position: center;
 }
 
+.bg-contact{
+  background-image:url('./assets/bgCalendar.png');
+  background-size: cover;
+  background-position: center;
+}
+
 .line {
   position: absolute;
   left: 0;

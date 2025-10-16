@@ -2,8 +2,8 @@ import React from 'react'
 
 const CalendarCard = ({ date, festival, place }) => {
     return (
-        <div className='border-l-2 border-black flex flex-row items-center justify-between w-4/5 pl-10'>
-            <div className='flex flex-col gap-5 items-start justify-center'>
+        <div className=' flex flex-row items-center justify-between w-full bg-white py-10 px-10'>
+            <div className='border-l-4 border-black pl-6 flex flex-col gap-5 items-start justify-center'>
                 <h2 className='text-3xl text-noto font-semibold text-black uppercase'>
                     {date}
                 </h2>

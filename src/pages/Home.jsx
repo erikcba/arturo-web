@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import Menu from '../components/Menu';
 import Navbar from '../components/Navbar';
+import logoBlanco from '../assets/logoBlanco.png'
 
 const Home = () => {
     const [mostrarMenu, setMostrarMenu] = useState(false)
@@ -18,7 +19,7 @@ const Home = () => {
         <div className='bg-zinc-900 h-screen flex justify-center items-center w-full'>
 
             <>
-                <Navbar bgColor={"bg-white"} className={mostrarMenu ? 'text-white' : 'text-white'} abrirMenu={() => {
+                <Navbar logo={logoBlanco} bgColor={"bg-white"} className={mostrarMenu ? 'text-white' : 'text-white'} abrirMenu={() => {
                     if (mostrarMenu) {
                         cerrarMenu()
                     } else {
