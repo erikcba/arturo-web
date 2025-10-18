@@ -5,6 +5,7 @@ import logoNegro from '../assets/logoNegro.png'
 import Menu from '../components/Menu'
 import { useTranslation } from 'react-i18next'
 import contactImg from '../assets/contactImg.png'
+import Redes from '../components/Redes'
 
 const Contact = () => {
 
@@ -21,7 +22,7 @@ const Contact = () => {
         }, 200)
     }
     return (
-        <div className='bg-gris'>
+        <div className='bg-gris h-screen'>
             <Navbar logo={logoNegro} color={"text-white"} className={mostrarMenu ? 'text-white' : 'text-black'} abrirMenu={() => {
                 if (mostrarMenu) {
                     cerrarMenu()
@@ -37,12 +38,12 @@ const Contact = () => {
                         <img className='w-auto h-screen absolute' src={contactImg} alt="" />
                         <div className='container mx-auto 2xl:pt-50'>
                             <div className='flex flex-row items-center h-[711px] justify-end w-full gap-20 '>
-                                <div className='w-1/2 flex flex-col justify-between h-full gap-5 border-b-2 border-white'>
-                                    <div>
-                                        <h1 className='text-black text-8-5 font-xxlight text-lexend uppercase tracking-widest leading-none w-full text-left'>
+                                <div className='w-1/2 flex flex-col items-center justify-between h-full gap-5'>
+                                    <div className='flex flex-col w-fit 2xl:pl-22'>
+                                        <h1 className='text-black text-8-5 font-xxlight text-lexend uppercase tracking-widest leading-none w-fit text-left'>
                                             Get in touch
                                         </h1>
-                                        <p className='uppercase text-black text-2xl font-semibold text-lexend tracking-widest leading-none w-full text-left mt-10'>
+                                        <p className='uppercase text-black text-2xl font-semibold text-lexend tracking-widest leading-none w-fit text-left mt-10'>
                                             /Or just say hello
                                         </p>
                                     </div>
@@ -51,11 +52,7 @@ const Contact = () => {
                                             info@arturoguitar.com
                                         </p>
                                     </div>
-                                    <div>
-                                        <p>
-                                            redes
-                                        </p>
-                                    </div>
+                                    <Redes color={'negro'} />
                                 </div>
                             </div>
                         </div>

@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState, useRef } from 'react'
 import Navbar from '../components/Navbar'
 import aboutImg from '../assets/aboutImg.png'
 import aboutImg2 from '../assets/aboutImg2.png'
@@ -8,33 +8,44 @@ import logoNegro from '../assets/logoNegro.png'
 import Menu from '../components/Menu'
 import { useTranslation, Trans } from 'react-i18next'
 import Footer from '../components/Footer'
+import Redes from '../components/Redes'
+import BackTop from '../components/BackTop'
 
 const About = () => {
 
   const [mostrarMenu, setMostrarMenu] = useState(false)
   const [animando, setAnimando] = useState(false)
+  const scrollPosRef = useRef(0)
 
   const { t } = useTranslation()
+
+  const abrirMenu = () => {
+    scrollPosRef.current = window.scrollY // guardamos posición actual
+    setMostrarMenu(true)
+    document.body.style.overflow = 'hidden' // evitamos scroll mientras el menú está abierto
+  }
 
   const cerrarMenu = () => {
     setAnimando(true)
     setTimeout(() => {
       setMostrarMenu(false)
       setAnimando(false)
+      document.body.style.overflow = 'auto'
+      window.scrollTo(0, scrollPosRef.current)
     }, 200)
   }
   return (
 
     <div className='bg-gris'>
-      <Navbar logo={logoNegro} className={mostrarMenu ? 'text-white' : 'text-black'} abrirMenu={() => {
+      <Navbar logo={logoNegro} mostrarMenu={mostrarMenu} className={mostrarMenu ? 'text-white' : 'text-black'} abrirMenu={() => {
         if (mostrarMenu) {
           cerrarMenu()
         } else {
-          setMostrarMenu(true)
+          abrirMenu()
         }
       }} />
       {
-        mostrarMenu ? <Menu className={animando ? 'animate-slide-up' : 'animate-slide-down'} />
+        mostrarMenu ? <Menu onClose={cerrarMenu} className={animando ? 'animate-slide-up' : 'animate-slide-down'} />
           :
           <>
             <div id='top' className='2xl:pt-72'>
@@ -69,7 +80,11 @@ const About = () => {
                 <img className='cover ml-auto' src={aboutImg4} alt="" />
               </div>
             </div>
-            <Footer />
+            <div className='container mx-auto py-10 flex flex-row gap-10 mt-5 items-center justify-center w-full relative'>
+              <Redes color={'negro'} />
+              <BackTop color={'negro'} />
+            </div>
+
           </>
       }
     </div>

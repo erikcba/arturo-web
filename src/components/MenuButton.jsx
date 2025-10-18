@@ -1,21 +1,13 @@
-import { useState } from "react";
 
-export default function MenuButton({ onClick, bgColor = "bg-black" }) {
-  const [open, setOpen] = useState(false);
-
-  const toggleMenu = () => {
-    setOpen(!open);
-    if (onClick) onClick();
-  };
-
+export default function MenuButton({ isOpen, onClick, bgColor = "bg-black" }) {
   return (
     <button
-      onClick={toggleMenu}
-      className={`menu-btn mx-auto ${open ? "active" : ""}`}
+      onClick={onClick}
+      className={`menu-btn mx-auto ${isOpen ? "active" : ""}`}
     >
-      <span className={`line ${bgColor} ${open ? "bg-white" : ""}`}></span>
-      <span className={`line ${bgColor} ${open ? "bg-white" : ""}`}></span>
-      <span className={`line ${bgColor} ${open ? "bg-white" : ""}`}></span>
+      <span className={`line ${bgColor} ${isOpen ? "bg-white" : ""}`}></span>
+      <span className={`line ${bgColor} ${isOpen ? "bg-white" : ""}`}></span>
+      <span className={`line ${bgColor} ${isOpen ? "bg-white" : ""}`}></span>
     </button>
   );
 }

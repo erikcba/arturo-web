@@ -6,6 +6,8 @@ import { useTranslation } from 'react-i18next'
 import Footer from '../components/Footer'
 import calendarImg1 from '../assets/calendarImg1.png'
 import CalendarCard from '../components/CalendarCard'
+import Redes from '../components/Redes'
+import BackTop from '../components/BackTop'
 
 const Calendar = () => {
 
@@ -23,7 +25,7 @@ const Calendar = () => {
     }
 
     return (
-        <div className='bg-contact h-full'>
+        <div className='bg-contact min-h-screen'>
             <Navbar logo={logoBlanco} bgColor={"bg-white"} color={"text-white"} className={mostrarMenu ? 'text-white' : 'text-black'} abrirMenu={() => {
                 if (mostrarMenu) {
                     cerrarMenu()
@@ -35,7 +37,7 @@ const Calendar = () => {
                 mostrarMenu ? <Menu className={animando ? 'animate-slide-up' : 'animate-slide-down'} />
                     :
                     <div>
-                        <div id='top' className='2xl:pt-40'>
+                        <div id='top' className='2xl:pt-30'>
                             <div className='container mx-auto'>
                                 <div className='flex flex-col gap-8 w-full items-center justify-center '>
                                     <div className='col-span-3 px-10 flex flex-col gap-5'>
@@ -52,7 +54,10 @@ const Calendar = () => {
                             </div>
 
                         </div>
-                        <Footer />
+                        <div className='container mx-auto py-10 flex flex-row gap-10 mt-5 items-center justify-center w-full relative'>
+                            <Redes color={'blanco'} />
+                            <BackTop color={'blanco'}/>
+                        </div>
                     </div>
             }
         </div>
