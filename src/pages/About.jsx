@@ -58,7 +58,7 @@ const About = () => {
             </div>
             <img className="absolute md:right-5 z-10 -bottom-6 xl:-top-25" src={aboutImg} alt="" />
           </div>
-          <div className='w-full md:w-5/7 container mx-auto py-20 flex justify-center items-center'>
+          <div className='w-full md:w-5/7 container mx-auto pt-20  md:py-20 flex justify-center items-center'>
             <p className='text-2xl xl:text-4xl font-light text-left md:text-center'>
               <Trans i18nKey="about1" components={{ 1: <strong className="font-semibold text-black" /> }} />
             </p>
