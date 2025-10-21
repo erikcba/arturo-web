@@ -1,5 +1,6 @@
 import React from 'react'
 import { Link } from 'react-router'
+import flecha from './assets/flecha.png'
 
 const Index = () => {
     return (
@@ -13,7 +14,7 @@ const Index = () => {
                         <p>NESS</p>
                         <span className='bg-white text-black'>PASSION</span>
                         <p>IN MUSIC/</p>
-                        <p className='uppercase text-sm xl:text-xl font-light mt-20 blink'>Click anywhere to continue -{'>'} </p>
+                        <p className='uppercase text-sm xl:text-xl font-light mt-20 blink flex xl:flex-row flex-col items-center justify-center gap-4 xl:gap-8'>Click anywhere to continue <img src={flecha} alt="" /> </p>
                     </div>
                 </div>
             </div>

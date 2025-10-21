@@ -25,7 +25,7 @@ const Calendar = () => {
     }
 
     return (
-        <div className='bg-contact min-h-screen'>
+        <div className='bg-contact h-full md:h-screen'>
             <Navbar logo={logoBlanco} bgColor={"bg-white"} color={"text-white"} className={mostrarMenu ? 'text-white' : 'text-black'} abrirMenu={() => {
                 if (mostrarMenu) {
                     cerrarMenu()
@@ -33,33 +33,33 @@ const Calendar = () => {
                     setMostrarMenu(true)
                 }
             }} />
-            {
-                mostrarMenu ? <Menu className={animando ? 'animate-slide-up' : 'animate-slide-down'} />
-                    :
-                    <div>
-                        <div id='top' className='2xl:pt-30'>
-                            <div className='container mx-auto'>
-                                <div className='flex flex-col gap-8 w-full items-center justify-center '>
-                                    <div className='col-span-3 px-10 flex flex-col gap-5'>
-                                        <h1 className='text-white text-8-5 font-xxlight text-lexend tracking-widest leading-none w-full text-left'>
-                                            CALENDAR
-                                        </h1>
-                                        <div className='flex flex-col gap-10 mt-10 '>
-                                            <CalendarCard date={"19 November 2025, 00hs"} festival={"Reading Fringe Festival"} place={"Düsseldorf, Germany"} />
-                                            <CalendarCard date={"19 November 2025, 00hs"} festival={"Reading Fringe Festival"} place={"Düsseldorf, Germany"} />
-                                            <CalendarCard date={"19 November 2025, 00hs"} festival={"Reading Fringe Festival"} place={"Düsseldorf, Germany"} />
-                                        </div>
-                                    </div>
+
+            <div>
+                {
+                    mostrarMenu && <Menu className={animando ? 'animate-slide-up' : 'animate-slide-down'} />
+                }
+                <div id='top' className='2xl:pt-30 pt-30 px-6 sm:px-0'>
+                    <div className='container mx-auto'>
+                        <div className='flex flex-col gap-8 w-full items-center justify-center '>
+                            <div className='w-full md:px-10 flex flex-col gap-5'>
+                                <h1 className='text-white text-8-5 font-xxlight text-lexend tracking-widest leading-none w-full text-center md:text-left'>
+                                    CALENDAR
+                                </h1>
+                                <div className='flex flex-col gap-10 mt-10 '>
+                                    <CalendarCard date={"19 November 2025, 00hs"} festival={"Reading Fringe Festival"} place={"Düsseldorf, Germany"} />
+                                    <CalendarCard date={"19 November 2025, 00hs"} festival={"Reading Fringe Festival"} place={"Düsseldorf, Germany"} />
+                                    <CalendarCard date={"19 November 2025, 00hs"} festival={"Reading Fringe Festival"} place={"Düsseldorf, Germany"} />
                                 </div>
                             </div>
-
-                        </div>
-                        <div className='container mx-auto py-10 flex flex-row gap-10 mt-5 items-center justify-center w-full relative'>
-                            <Redes color={'blanco'} />
-                            <BackTop color={'blanco'}/>
                         </div>
                     </div>
-            }
+
+                </div>
+                <div className='container mx-auto py-10 flex flex-col md:flex-row gap-10 mt-5 items-center justify-center w-full md:relative'>
+                    <Redes color={'blanco'} />
+                    <BackTop color={'blanco'} />
+                </div>
+            </div>
         </div>
     )
 }

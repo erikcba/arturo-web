@@ -27,7 +27,7 @@ const Redes = ({ color = 'blanco' }) => {
             apple: apple,
         }
     return (
-        <div className='flex flex-row gap-10 mt-5 items-center justify-center'>
+        <div className='flex flex-row gap-10 mt-5 items-center justify-center flex-wrap'>
             <a href='https://www.instagram.com/arturo.castro.nogueras?utm_source=qr&igsh=MWhsZGMzN3l1c2w0dQ==' target='_blank' rel='noreferrer'>
                 <img className='hover:scale-110 transition-transform duration-300' src={icons.instagram} alt='Instagram' />
             </a>

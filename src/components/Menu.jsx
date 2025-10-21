@@ -1,6 +1,9 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 import { useTranslation } from 'react-i18next'
+import Redes from './Redes'
+import BackTop from './BackTop'
+
 
 const Menu = ({ className, onClose }) => {
 
@@ -11,7 +14,7 @@ const Menu = ({ className, onClose }) => {
         if (onClose) onClose()
     }
     return (
-        <div className={`w-screen h-screen bg-black  ${className}`}>
+        <div className={`w-screen fixed inset-0 pt-30 z-30 min-h-screen bg-black overflow-y-auto ${className}`}>
             <div className='container h-full mx-auto flex flex-col md:flex-row justify-center items-center xl:gap-14 gap-8 z-20'>
                 <div className='flex flex-col items-center justify-center gap-4 md:ml-auto'>
                     <Link to='/'>
@@ -51,6 +54,10 @@ const Menu = ({ className, onClose }) => {
                     >
                         ES
                     </button>
+                </div>
+                <div className='container self-end mx-auto py-10 flex flex-col md:flex-row gap-10 mt-5 items-center justify-center w-full md:relative'>
+                    <Redes color={'blanco'} />
+                    <BackTop color={'blanco'} />
                 </div>
             </div>
         </div>
