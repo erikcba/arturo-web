@@ -11,7 +11,7 @@ const BackTop = ({color}) => {
 
 
     return (
-        <button onClick={backToTop} className={` ${color === 'negro' ? 'text-black' : 'text-white'} text-lg font-light mt-5 text-lexend place-content-end leading-none md:absolute md:right-0 w-fit text-center hover:scale-110 transition-transform duration-300 hover:cursor-pointer`} >
+        <button onClick={backToTop} className={` ${color === 'negro' ? 'text-black' : 'text-white'} text-lg font-light mt-5 text-lexend place-content-end leading-none xl:absolute xl:right-0 w-fit text-center hover:scale-110 transition-transform duration-300 hover:cursor-pointer`} >
             BACK TO TOP
         </button>
     )

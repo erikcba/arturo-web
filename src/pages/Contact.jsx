@@ -26,7 +26,7 @@ const Contact = () => {
         setMostrarMenu(true)
     }
     return (
-        <div className='bg-gris h-auto sm:h-screen'>
+        <div className='bg-gris h-auto 2xl:h-screen'>
             <Navbar logo={logoNegro} bgColor={`${mostrarMenu ? 'bg-white' : 'bg-black'}`} mostrarMenu={mostrarMenu} className={mostrarMenu ? 'text-white' : 'text-black'} abrirMenu={() => {
                     if (mostrarMenu) {
                         cerrarMenu()
@@ -37,12 +37,12 @@ const Contact = () => {
             {
                 mostrarMenu && <Menu className={animando ? 'animate-slide-up' : 'animate-slide-down'} />
             }
-            <div id='top' className='flex flex-col px-4 sm:px-0 pt-30 pb-10 md:pb-0 md:pt-0'>
-                <img className='w-auto md:h-screen md:absolute hidden md:block' src={contactImg} alt="" />
+            <div id='top' className='flex flex-col px-4 xl:h-screen sm:px-0 pt-30 pb-10 md:pb-0 md:pt-0'>
+                <img className='w-auto xl:h-screen xl:absolute hidden xl:block' src={contactImg} alt="" />
                 <div className='container mx-auto 2xl:pt-50'>
-                    <div className='flex flex-row items-center h-auto xl:h-[711px] justify-end w-full gap-20 '>
+                    <div className='flex flex-row items-center h-auto xl:h-[711px] justify-center md:justify-end w-full gap-20  '>
                         <div className='w-full md:w-1/2 flex flex-col items-center justify-between h-full gap-5'>
-                            <div className='flex flex-col w-fit 2xl:pl-22'>
+                            <div className='flex flex-col w-fit 2xl:pl-22 xl:pt-40 2xl:pt-0'>
                                 <h1 className='text-black text-8-5 font-xxlight text-lexend uppercase tracking-widest leading-none w-fit text-left'>
                                     Get in touch
                                 </h1>
@@ -55,7 +55,7 @@ const Contact = () => {
                                     info@arturoguitar.com
                                 </p>
                             </div>
-                            <img className='w-auto md:hidden' src={contactImg} alt="" />
+                            <img className='w-auto xl:hidden' src={contactImg} alt="" />
                             <Redes color={'negro'} />
                         </div>
                     </div>

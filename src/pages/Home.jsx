@@ -35,9 +35,9 @@ const Home = () => {
                     {
                         mostrarMenu && <Menu onClose={cerrarMenu} className={animando ? 'animate-slide-up' : 'animate-slide-down'} />
                     }
-                    <div className='container mx-auto w-full flex flex-col px-10 xl:px-0 gap-20 xl:gap-42'>
-                        <h1 className='text-white text-4xl xl:[font-size:7.5rem] font-extralight text-lexend tracking-max leading-none'>ARTURO</h1>
-                        <h1 className='text-white text-4xl xl:[font-size:7.5rem] font-extralight text-lexend tracking-max leading-none ml-auto bg-zinc-950/30 w-fit pl-4 py-4'>CASTRO/</h1>
+                    <div className='container mx-auto w-full flex flex-col px-10 xl:px-0 gap-12 lg:gap-20 xl:gap-42'>
+                        <h1 className='text-white text-3xl lg:text-6xl xl:[font-size:7.5rem] font-extralight text-lexend tracking-max leading-none sm:ml-30 xl:ml-0'>ARTURO</h1>
+                        <h1 className='text-white text-3xl lg:text-6xl xl:[font-size:7.5rem] font-extralight text-lexend tracking-max leading-none ml-10 sm:ml-80 xl:ml-auto bg-zinc-950/30 w-fit pl-4 py-4'>CASTRO/</h1>
                     </div>
                 </>
             </>

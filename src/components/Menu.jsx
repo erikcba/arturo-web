@@ -17,7 +17,7 @@ const Menu = ({ className, onClose }) => {
         <div className={`w-screen fixed inset-0 pt-30 z-30 min-h-screen bg-black overflow-y-auto ${className}`}>
             <div className='flex flex-col h-full'>
                 <div className='container h-full mx-auto flex flex-col md:flex-row justify-center items-center xl:gap-14 gap-8 z-20'>
-                    <div className='flex flex-col items-center justify-center gap-4 md:ml-auto'>
+                    <div className='flex flex-col items-center justify-center gap-4 2xl:ml-auto'>
                         <Link to='/'>
                             <p className='text-white text-3xl 2xl:text-[7.5rem] font-xxlight text-lexend tracking-max leading-none group  hover:bg-white transition-all duration-300 ease-in-out px-0 xl:px-24 hover:text-black'>
                                 <span className='text-white tracking-widest text-xs xl:text-4xl font-bold group-hover:text-black'>01/</span>

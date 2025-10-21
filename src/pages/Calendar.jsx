@@ -37,7 +37,7 @@ const Calendar = () => {
                 mostrarMenu && <Menu className={animando ? 'animate-slide-up' : 'animate-slide-down'} />
             }
             <div>
-                <div id='top' className='2xl:pt-30 pt-30 px-6 sm:px-0'>
+                <div id='top' className=' pt-30 md:pt-40 px-6 sm:px-0'>
                     <div className='container mx-auto'>
                         <div className='flex flex-col gap-8 w-full items-center justify-center '>
                             <div className='w-full md:px-10 flex flex-col gap-5'>
