@@ -2,9 +2,6 @@ import React, { useState } from 'react'
 import Navbar from '../components/Navbar'
 import logoBlanco from '../assets/logoBlanco.png'
 import Menu from '../components/Menu'
-import { useTranslation } from 'react-i18next'
-import Footer from '../components/Footer'
-import calendarImg1 from '../assets/calendarImg1.png'
 import CalendarCard from '../components/CalendarCard'
 import Redes from '../components/Redes'
 import BackTop from '../components/BackTop'
@@ -14,8 +11,6 @@ const Calendar = () => {
     const [mostrarMenu, setMostrarMenu] = useState(false)
     const [animando, setAnimando] = useState(false)
 
-    const { t } = useTranslation()
-
     const cerrarMenu = () => {
         setAnimando(true)
         setTimeout(() => {
@@ -24,20 +19,24 @@ const Calendar = () => {
         }, 200)
     }
 
+    const abrirMenu = () => {
+        setMostrarMenu(true)
+    }
+
     return (
-        <div className='bg-contact h-auto md:h-screen'>
-            <Navbar logo={logoBlanco} bgColor={"bg-white"} color={"text-white"} className={mostrarMenu ? 'text-white' : 'text-black'} abrirMenu={() => {
+        <div className='bg-contact h-auto'>
+            <Navbar logo={logoBlanco} bgColor={"bg-white"} color={"text-white"} mostrarMenu={mostrarMenu} className={mostrarMenu ? 'text-white' : 'text-black'} abrirMenu={() => {
                 if (mostrarMenu) {
                     cerrarMenu()
                 } else {
-                    setMostrarMenu(true)
+                    abrirMenu()
                 }
             }} />
 
+            {
+                mostrarMenu && <Menu className={animando ? 'animate-slide-up' : 'animate-slide-down'} />
+            }
             <div>
-                {
-                    mostrarMenu && <Menu className={animando ? 'animate-slide-up' : 'animate-slide-down'} />
-                }
                 <div id='top' className='2xl:pt-30 pt-30 px-6 sm:px-0'>
                     <div className='container mx-auto'>
                         <div className='flex flex-col gap-8 w-full items-center justify-center '>
