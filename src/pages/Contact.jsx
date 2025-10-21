@@ -26,7 +26,7 @@ const Contact = () => {
         setMostrarMenu(true)
     }
     return (
-        <div className='bg-gris h-full md:h-screen'>
+        <div className='bg-gris h-auto sm:h-screen'>
             <Navbar logo={logoNegro} bgColor={`${mostrarMenu ? 'bg-white' : 'bg-black'}`} mostrarMenu={mostrarMenu} className={mostrarMenu ? 'text-white' : 'text-black'} abrirMenu={() => {
                     if (mostrarMenu) {
                         cerrarMenu()
@@ -37,7 +37,7 @@ const Contact = () => {
             {
                 mostrarMenu && <Menu className={animando ? 'animate-slide-up' : 'animate-slide-down'} />
             }
-            <div id='top' className='flex flex-col px-4 pt-30 pb-10 md:pb-0 md:pt-0'>
+            <div id='top' className='flex flex-col px-4 sm:px-0 pt-30 pb-10 md:pb-0 md:pt-0'>
                 <img className='w-auto md:h-screen md:absolute hidden md:block' src={contactImg} alt="" />
                 <div className='container mx-auto 2xl:pt-50'>
                     <div className='flex flex-row items-center h-auto xl:h-[711px] justify-end w-full gap-20 '>

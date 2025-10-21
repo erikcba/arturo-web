@@ -25,7 +25,7 @@ const Calendar = () => {
     }
 
     return (
-        <div className='bg-contact h-full md:h-screen'>
+        <div className='bg-contact h-auto md:h-screen'>
             <Navbar logo={logoBlanco} bgColor={"bg-white"} color={"text-white"} className={mostrarMenu ? 'text-white' : 'text-black'} abrirMenu={() => {
                 if (mostrarMenu) {
                     cerrarMenu()
