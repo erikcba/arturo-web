@@ -2,6 +2,10 @@
 @import url('https://fonts.googleapis.com/css2?family=Lexend+Giga:wght@100..900&family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap');
 @import "tailwindcss";
 
+body{
+  overflow: visible;
+}
+
 .text-lexend {
   font-family: 'Lexend Giga', sans-serif;
 }
@@ -46,6 +50,7 @@
   background-image:url('./assets/bgCalendar.png');
   background-size: cover;
   background-position: center;
+  height: fit-content;
 }
 
 .line {
@@ -156,5 +161,9 @@
 @media screen and (max-width: 440px) {
   .text-8-5 {
     font-size: 2.8rem;
+  }
+
+  .bg-hero {
+    background-image: url('./assets/bgMobile.png');
   }
 }

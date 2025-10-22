@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import Navbar from '../components/Navbar'
 import logoBlanco from '../assets/logoBlanco.png'
 import Menu from '../components/Menu'
@@ -11,21 +11,28 @@ const Calendar = () => {
     const [mostrarMenu, setMostrarMenu] = useState(false)
     const [animando, setAnimando] = useState(false)
 
+    useEffect(() => {
+        window.scrollTo(0, 0)
+        document.body.style.overflow = 'visible'
+    }, [])
+    
     const cerrarMenu = () => {
         setAnimando(true)
         setTimeout(() => {
             setMostrarMenu(false)
             setAnimando(false)
         }, 200)
+        document.body.style.overflow = 'visible'
     }
-
+    
     const abrirMenu = () => {
         setMostrarMenu(true)
+        document.body.style.overflow = 'hidden'
     }
 
     return (
-        <div className='bg-contact h-auto'>
-            <Navbar logo={logoBlanco} bgColor={"bg-white"} color={"text-white"} mostrarMenu={mostrarMenu} className={mostrarMenu ? 'text-white' : 'text-black'} abrirMenu={() => {
+        <div className='bg-contact '>
+            <Navbar logoBlanco={logoBlanco} logoNegro={logoBlanco} bgColor={"bg-white"} color={"text-white"} mostrarMenu={mostrarMenu} className={mostrarMenu ? 'text-white' : 'text-black'} abrirMenu={() => {
                 if (mostrarMenu) {
                     cerrarMenu()
                 } else {
@@ -37,11 +44,11 @@ const Calendar = () => {
                 mostrarMenu && <Menu className={animando ? 'animate-slide-up' : 'animate-slide-down'} />
             }
             <div>
-                <div id='top' className=' pt-30 md:pt-40 px-6 sm:px-0'>
+                <div id='top' className='pt-8 md:pt-10 px-6 sm:px-0'>
                     <div className='container mx-auto'>
                         <div className='flex flex-col gap-8 w-full items-center justify-center '>
-                            <div className='w-full md:px-10 flex flex-col gap-5'>
-                                <h1 className='text-white text-8-5 font-xxlight text-lexend tracking-widest leading-none w-full text-center md:text-left'>
+                            <div className='w-full xl:w-4/6 md:px-10 flex flex-col gap-5'>
+                                <h1 className='text-white text-8-5 font-xxlight text-lexend tracking-widest leading-none w-full text-center'>
                                     CALENDAR
                                 </h1>
                                 <div className='flex flex-col gap-10 mt-10 '>

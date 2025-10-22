@@ -1,9 +1,9 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import { useState } from 'react'
 import Navbar from '../components/Navbar'
 import logoNegro from '../assets/logoNegro.png'
+import logoBlanco from '../assets/logoBlanco.png'
 import Menu from '../components/Menu'
-import { useTranslation } from 'react-i18next'
 import contactImg from '../assets/contactImg.png'
 import Redes from '../components/Redes'
 
@@ -12,7 +12,12 @@ const Contact = () => {
     const [mostrarMenu, setMostrarMenu] = useState(false)
     const [animando, setAnimando] = useState(false)
 
-    const { t } = useTranslation()
+    useEffect(() => {
+        window.scrollTo(0, 0)
+        document.body.style.overflow = 'visible'
+    }, [])
+
+
 
     const cerrarMenu = () => {
         setAnimando(true)
@@ -20,26 +25,28 @@ const Contact = () => {
             setMostrarMenu(false)
             setAnimando(false)
         }, 200)
+        document.body.style.overflow = 'visible'
     }
 
-        const abrirMenu = () => {
+    const abrirMenu = () => {
         setMostrarMenu(true)
+        document.body.style.overflow = 'hidden'
     }
     return (
-        <div className='bg-gris h-auto 2xl:h-screen'>
-            <Navbar logo={logoNegro} bgColor={`${mostrarMenu ? 'bg-white' : 'bg-black'}`} mostrarMenu={mostrarMenu} className={mostrarMenu ? 'text-white' : 'text-black'} abrirMenu={() => {
-                    if (mostrarMenu) {
-                        cerrarMenu()
-                    } else {
-                        abrirMenu()
-                    }
-                }} />
+        <div className='bg-gris h-auto overflow-hidden 2xl:h-screen'>
+            <Navbar logoBlanco={logoBlanco} logoNegro={logoNegro} bgColor={`${mostrarMenu ? 'bg-white' : 'bg-black'}`} mostrarMenu={mostrarMenu} className={mostrarMenu ? 'text-white' : 'text-black md:text-white'} abrirMenu={() => {
+                if (mostrarMenu) {
+                    cerrarMenu()
+                } else {
+                    abrirMenu()
+                }
+            }} />
             {
                 mostrarMenu && <Menu className={animando ? 'animate-slide-up' : 'animate-slide-down'} />
             }
-            <div id='top' className='flex flex-col px-4 xl:h-screen sm:px-0 pt-30 pb-10 md:pb-0 md:pt-0'>
-                <img className='w-auto xl:h-screen xl:absolute hidden xl:block' src={contactImg} alt="" />
-                <div className='container mx-auto 2xl:pt-50'>
+            <div id='top' className='flex flex-col px-4 xl:h-screen sm:px-8 pb-10 md:pb-0 md:pt-0'>
+                <img className='w-auto xl:h-screen xl:absolute top-0 left-0 hidden z-10 xl:block' src={contactImg} alt="" />
+                <div className='container mx-auto 2xl:pt-10'>
                     <div className='flex flex-row items-center h-auto xl:h-[711px] justify-center md:justify-end w-full gap-20  '>
                         <div className='w-full md:w-1/2 flex flex-col items-center justify-between h-full gap-5'>
                             <div className='flex flex-col w-fit 2xl:pl-22 xl:pt-40 2xl:pt-0'>

@@ -7,17 +7,17 @@ import BackTop from './BackTop'
 
 const Menu = ({ className, onClose }) => {
 
-    const { t, i18n } = useTranslation()
+    const { i18n } = useTranslation()
 
     const changeLanguage = (lng) => {
         i18n.changeLanguage(lng)
         if (onClose) onClose()
     }
     return (
-        <div className={`w-screen fixed inset-0 pt-30 z-30 min-h-screen bg-black overflow-y-auto ${className}`}>
-            <div className='flex flex-col h-full'>
-                <div className='container h-full mx-auto flex flex-col md:flex-row justify-center items-center xl:gap-14 gap-8 z-20'>
-                    <div className='flex flex-col items-center justify-center gap-4 2xl:ml-auto'>
+        <div className={`w-screen fixed inset-0 z-30 min-h-screen bg-black overflow-y-auto ${className}`}>
+            <div className='flex flex-col h-full pt-20 md:pt-0'>
+                <div className='container h-full mx-auto flex flex-col md:flex-row justify-center items-center pt-20 sm:pt-0 xl:gap-14 gap-24 z-20'>
+                    <div className='flex flex-col items-center justify-center gap-10 xl:gap-6 2xl:ml-auto'>
                         <Link to='/'>
                             <p className='text-white text-3xl 2xl:text-[7.5rem] font-xxlight text-lexend tracking-max leading-none group  hover:bg-white transition-all duration-300 ease-in-out px-0 xl:px-24 hover:text-black'>
                                 <span className='text-white tracking-widest text-xs xl:text-4xl font-bold group-hover:text-black'>01/</span>
@@ -44,14 +44,14 @@ const Menu = ({ className, onClose }) => {
                     <div className='flex flex-row md:flex-col justify-center items-center gap-4 '>
                         <button
                             onClick={() => changeLanguage('en')}
-                            className={`text-lexend text-2xl font-normal ${i18n.language === 'en' ? 'text-white' : 'text-gray-500'} hover:text-white hover:cursor-pointer transition`}
+                            className={`text-lexend text-2xl font-light sm:font-normal ${i18n.language === 'en' ? 'text-white' : 'text-gray-500'} hover:text-white hover:cursor-pointer transition`}
                         >
                             EN
                         </button>
                         <div className='border w-full border-l-white h-full md:border-t-white'></div>
                         <button
                             onClick={() => changeLanguage('es')}
-                            className={`text-lexend text-2xl font-normal ${i18n.language === 'es' ? 'text-white' : 'text-gray-500'} hover:text-white hover:cursor-pointer transition`}
+                            className={`text-lexend text-2xl font-light sm:font-normal ${i18n.language === 'es' ? 'text-white' : 'text-gray-500'} hover:text-white hover:cursor-pointer transition`}
                         >
                             ES
                         </button>

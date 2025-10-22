@@ -1,10 +1,11 @@
-import React, { useState, useRef } from 'react'
+import React, { useState, useRef, useEffect } from 'react'
 import Navbar from '../components/Navbar'
 import aboutImg from '../assets/aboutImg.png'
 import aboutImg2 from '../assets/aboutImg2.png'
 import aboutImg3 from '../assets/aboutImg3.png'
 import aboutImg4 from '../assets/aboutImg5.png'
 import logoNegro from '../assets/logoNegro.png'
+import logoBlanco from '../assets/logoBlanco.png'
 import Menu from '../components/Menu'
 import { useTranslation, Trans } from 'react-i18next'
 import Footer from '../components/Footer'
@@ -19,10 +20,14 @@ const About = () => {
 
   const { t } = useTranslation()
 
+  useEffect(() => {
+    window.scrollTo(0, 0)
+    document.body.style.overflow = 'visible'
+  }, [])
+
   const abrirMenu = () => {
-    scrollPosRef.current = window.scrollY // guardamos posición actual
     setMostrarMenu(true)
-    document.body.style.overflow = 'hidden' // evitamos scroll mientras el menú está abierto
+    document.body.style.overflow = 'hidden'
   }
 
   const cerrarMenu = () => {
@@ -30,14 +35,14 @@ const About = () => {
     setTimeout(() => {
       setMostrarMenu(false)
       setAnimando(false)
-      document.body.style.overflow = 'auto'
+      document.body.style.overflow = 'visible'
       window.scrollTo(0, scrollPosRef.current)
     }, 200)
   }
   return (
 
     <div className='bg-gris'>
-      <Navbar logo={logoNegro} mostrarMenu={mostrarMenu} className={mostrarMenu ? 'text-white' : 'text-black'} abrirMenu={() => {
+      <Navbar logo={logoNegro} logoBlanco={logoBlanco} logoNegro={logoNegro} mostrarMenu={mostrarMenu} className={mostrarMenu ? 'text-white' : 'text-black'} abrirMenu={() => {
         if (mostrarMenu) {
           cerrarMenu()
         } else {
@@ -49,17 +54,17 @@ const About = () => {
         {
           mostrarMenu && <Menu onClose={cerrarMenu} className={animando ? 'animate-slide-up' : 'animate-slide-down'} />
         }
-        <div id='top' className='pt-20 md:pt-24 2xl:pt-26 px-4 xl:px-0'>
+        <div id='top' className='pt-5 xl:pt-8 px-4 xl:px-0'>
           <div className='container mx-auto flex flex-col md:flex-row min-h-[600px] md:min-h-[700px] justify-center items-center relative'>
-            <div className='flex flex-col gap-3 xl:gap-8 z-20 h-fit absolute md:left-10 xl:left-30 top-10 md:top-70 2xl:top-40 bottom-0'>
+            <div className='flex flex-col gap-3 xl:gap-8 z-20 h-fit absolute md:left-10 xl:left-30 -top-5 md:top-70 2xl:top-40 bottom-0'>
               <h1 className='text-black text-4xl text-8-5 font-xxlight text-lexend tracking-widest leading-none'>ARTURO</h1>
               <h1 className='text-white text-4xl text-8-5 font-xxlight text-lexend tracking-widest leading-none py-2 bg-black ml-auto w-fit px-6'>/CASTRO</h1>
               <h1 className='text-black text-4xl text-8-5 font-xxlight text-lexend tracking-widest leading-none'>NOGUERAS</h1>
             </div>
             <img className="absolute md:right-5 xl:right-10 z-10 -bottom-6 xl:top-15" src={aboutImg} alt="" />
           </div>
-          <div className='w-full xl:w-5/7 container mx-auto pt-20  md:py-20 flex justify-center items-center'>
-            <p className='text-2xl xl:text-4xl font-light text-left md:text-center'>
+          <div className='w-full xl:w-5/7 container mx-auto pt-20 xl:pt-44  md:py-20 flex justify-center items-center'>
+            <p className='text-2xl xl:text-4xl 2xl:px-35 xl:leading-12 font-light text-left md:text-center'>
               <Trans i18nKey="about1" components={{ 1: <strong className="font-semibold text-black" /> }} />
             </p>
           </div>
