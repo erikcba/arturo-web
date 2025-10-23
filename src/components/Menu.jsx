@@ -15,7 +15,7 @@ const Menu = ({ className, onClose }) => {
     }
     return (
         <div className={`w-screen fixed inset-0 z-30 min-h-screen bg-black overflow-y-auto ${className}`}>
-            <div className='flex flex-col h-full pt-20 md:pt-0'>
+            <div className='flex flex-col h-full pt-20 xl:pt-26 '>
                 <div className='container h-full mx-auto flex flex-col md:flex-row justify-center items-center pt-20 sm:pt-0 xl:gap-14 gap-24 z-20'>
                     <div className='flex flex-col items-center justify-center gap-10 xl:gap-6 2xl:ml-auto'>
                         <Link to='/'>

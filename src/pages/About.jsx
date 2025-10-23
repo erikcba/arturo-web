@@ -54,7 +54,7 @@ const About = () => {
         {
           mostrarMenu && <Menu onClose={cerrarMenu} className={animando ? 'animate-slide-up' : 'animate-slide-down'} />
         }
-        <div id='top' className='pt-5 xl:pt-8 px-4 xl:px-0'>
+        <div id='top' className='pt-5 xl:pt-8 px-10 xl:px-0'>
           <div className='container mx-auto flex flex-col md:flex-row min-h-[600px] md:min-h-[700px] justify-center items-center relative'>
             <div className='flex flex-col gap-3 xl:gap-8 z-20 h-fit absolute md:left-10 xl:left-30 -top-5 md:top-70 2xl:top-40 bottom-0'>
               <h1 className='text-black text-4xl text-8-5 font-xxlight text-lexend tracking-widest leading-none'>ARTURO</h1>
@@ -86,7 +86,7 @@ const About = () => {
             <img className='cover xl:ml-auto' src={aboutImg4} alt="" />
           </div>
         </div>
-        <div className='container mx-auto py-10 flex flex-col xl:flex-row gap-10 mt-5 items-center justify-center w-full xl:relative'>
+        <div className='container mx-auto py-10 flex flex-col xl:flex-row gap-10 mt-5 w-full items-center justify-center w-full xl:relative'>
           <Redes color={'negro'} />
           <BackTop color={'negro'} />
         </div>

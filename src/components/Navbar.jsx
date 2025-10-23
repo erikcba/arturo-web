@@ -1,6 +1,6 @@
 import React from 'react'
 import MenuButton from './MenuButton'
-
+import LogoAnimado from './LogoAnimado'
 
 
 const Navbar = ({abrirMenu,className,bgColor,logoNegro,logoBlanco,color,mostrarMenu}) => {
@@ -27,11 +27,12 @@ const Navbar = ({abrirMenu,className,bgColor,logoNegro,logoBlanco,color,mostrarM
                 </div>
 
                 {/* Derecha */}
-                <img
+                {/* <img
                     src={mostrarMenu ? logoBlanco : logoNegro}
                     alt="Logo"
                     className="h-22 md:block hidden w-24 object-contain ml-auto transition-all duration-300"
-                />
+                /> */}
+                <LogoAnimado/>
             </div>
         </div>
     )

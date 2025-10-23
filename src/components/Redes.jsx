@@ -10,7 +10,7 @@ import instagramNegro from '../assets/InstagramNegro.png'
 import youtubeNegro from '../assets/YoutubeNegro.png'
 import appleNegro from '../assets/AppleNegro.png'
 
-const Redes = ({ color = 'blanco' }) => {
+const Redes = ({ color = 'blanco', justify = 'justify-center', gap = 'gap-10  2xl:gap-24' }) => {
     const icons = color === 'negro'
         ? {
             instagram: instagramNegro,
@@ -27,7 +27,7 @@ const Redes = ({ color = 'blanco' }) => {
             apple: apple,
         }
     return (
-        <div className='flex flex-row gap-10 md:gap-20 2xl:gap-24 mt-5 items-center justify-center flex-wrap'>
+        <div className={`flex flex-row  mt-5 items-center ${justify} ${gap} flex-wrap md:flex-nowrap`}>
             <a href='https://www.instagram.com/arturo.castro.nogueras?utm_source=qr&igsh=MWhsZGMzN3l1c2w0dQ==' target='_blank' rel='noreferrer'>
                 <img className='hover:scale-110 transition-transform duration-300' src={icons.instagram} alt='Instagram' />
             </a>
@@ -47,7 +47,7 @@ const Redes = ({ color = 'blanco' }) => {
                 href='https://app.cicadamusic.net/concert/671b74074fe5141dd0c21a94/store'
                 target='_blank'
                 rel='noreferrer'
-                className={`text-${color === 'negro' ? 'black' : 'white'} text-2xl font-light md:font-medium text-lexend leading-none w-fit text-center hover:scale-110 transition-transform duration-300`}
+                className={`text-${color === 'negro' ? 'black' : 'white'} text-xl md:text-2xl font-light md:font-medium text-lexend leading-none w-fit text-center hover:scale-110 transition-transform duration-300`}
             >
                 /STORE
             </a>
