@@ -3,7 +3,7 @@ import MenuButton from './MenuButton'
 import LogoAnimado from './LogoAnimado'
 
 
-const Navbar = ({abrirMenu,className,bgColor,logoNegro,logoBlanco,color,mostrarMenu}) => {
+const Navbar = ({ abrirMenu, className, bgColor,colorLogo, color, mostrarMenu }) => {
     return (
         <div className="w-full flex justify-start items-center top-0 left-0 bg-transparent relative z-50 gap-4">
             <div className="mx-auto my-10 px-10 md:px-10 xl:px-20 flex flex-row md:justify-center items-center w-full h-full gap-0 md:gap-4">
@@ -26,13 +26,9 @@ const Navbar = ({abrirMenu,className,bgColor,logoNegro,logoBlanco,color,mostrarM
                     <MenuButton bgColor={bgColor} isOpen={mostrarMenu} onClick={abrirMenu} />
                 </div>
 
-                {/* Derecha */}
-                {/* <img
-                    src={mostrarMenu ? logoBlanco : logoNegro}
-                    alt="Logo"
-                    className="h-22 md:block hidden w-24 object-contain ml-auto transition-all duration-300"
-                /> */}
-                <LogoAnimado/>
+                <div className='sm:block hidden'>
+                    <LogoAnimado color={colorLogo} />
+                </div>
             </div>
         </div>
     )

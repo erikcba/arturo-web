@@ -34,7 +34,7 @@ const Contact = () => {
     }
     return (
         <div className='bg-gris h-auto overflow-hidden md:h-[100dvh]'>
-            <Navbar logoBlanco={logoBlanco} logoNegro={logoNegro} bgColor={`${mostrarMenu ? 'bg-white' : 'bg-black'}`} mostrarMenu={mostrarMenu} className={mostrarMenu ? 'text-white' : 'text-black md:text-white'} abrirMenu={() => {
+            <Navbar logoBlanco={logoBlanco} logoNegro={logoNegro} colorLogo={mostrarMenu ? 'white': 'black'} bgColor={mostrarMenu ? 'bg-white' : 'bg-black'} mostrarMenu={mostrarMenu} className={mostrarMenu ? 'text-white' : 'text-black md:text-white'} abrirMenu={() => {
                 if (mostrarMenu) {
                     cerrarMenu()
                 } else {
