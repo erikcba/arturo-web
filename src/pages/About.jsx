@@ -8,7 +8,7 @@ import logoNegro from '../assets/logoNegro.png'
 import logoBlanco from '../assets/logoBlanco.png'
 import Menu from '../components/Menu'
 import { useTranslation, Trans } from 'react-i18next'
-import videoAbout from '../assets/AC-About.mp4'
+import videoAbout from '../assets/AC-About2.mp4'
 import Redes from '../components/Redes'
 import BackTop from '../components/BackTop'
 
