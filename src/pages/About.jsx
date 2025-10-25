@@ -8,7 +8,7 @@ import logoNegro from '../assets/logoNegro.png'
 import logoBlanco from '../assets/logoBlanco.png'
 import Menu from '../components/Menu'
 import { useTranslation, Trans } from 'react-i18next'
-import videoAbout from '../assets/AC-About2.mp4'
+import videoAbout2 from '../assets/AC-About2.mp4'
 import Redes from '../components/Redes'
 import BackTop from '../components/BackTop'
 
@@ -76,7 +76,7 @@ const About = () => {
             </div>
           </div>
           <div className='xl:my-30 mb-10'>
-            <video controls src={videoAbout} ></video>
+            <video controls src={videoAbout2} ></video>
           </div>
           <div className='w-full px-10 xl:px-0 xl:w-11/12 ml-auto flex flex-col xl:flex-row gap-10 2xl:gap-20 mb-20 h-fit'>
             <div className='flex flex-col 2xl:pl-10 2xl:pr-40 xl:justify-center justify-start items-center gap-6 w-full xl:w-1/2 text-2xl font-light'>
