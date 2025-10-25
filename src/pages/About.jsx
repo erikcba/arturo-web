@@ -61,7 +61,7 @@ const About = () => {
               <h1 className='text-white text-4xl text-8-5 font-xxlight text-lexend tracking-widest leading-none py-2 bg-black ml-auto w-fit px-6'>/CASTRO</h1>
               <h1 className='text-black text-4xl text-8-5 font-xxlight text-lexend tracking-widest leading-none'>NOGUERAS</h1>
             </div>
-            <img className="absolute md:right-5 xl:right-10 z-10 -bottom-6 xl:top-15" src={aboutImg} alt="" />
+            <img className="absolute md:right-5 xl:right-10 px-10 xl:px-0 z-10 -bottom-6 xl:top-15" src={aboutImg} alt="" />
           </div>
           <div className='w-full xl:w-5/7 px-10 xl:px-0 container mx-auto pt-20 xl:pt-44  md:py-20 flex justify-center items-center'>
             <p className='text-2xl xl:text-4xl 2xl:px-35 xl:leading-12 font-light text-left md:text-center'>
