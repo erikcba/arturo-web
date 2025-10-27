@@ -1,15 +1,8 @@
-import { useState } from "react"
+import { useAudio } from './AudioContext'
 
 export default function LogoAnimado({ color = 'white' }) {
-  const [playing, setPlaying] = useState(false)
 
-  const togglePlay = () => {
-    if (playing) {
-      setPlaying(false);
-    } else {
-      setPlaying(true);
-    }
-  };
+const { playing, togglePlay } = useAudio();
 
   return (
     <div

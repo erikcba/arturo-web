@@ -8,15 +8,19 @@ import logoNegro from '../assets/logoNegro.png'
 import logoBlanco from '../assets/logoBlanco.png'
 import Menu from '../components/Menu'
 import { useTranslation, Trans } from 'react-i18next'
-import videoAbout2 from '../assets/AC-About2.mp4'
+import videoAbout2 from '../assets/AC-About_h900px_1.mp4'
 import Redes from '../components/Redes'
 import BackTop from '../components/BackTop'
+import playBtn from '../assets/playBtn.png'
+import { useAudio } from '../components/AudioContext';
 
 const About = () => {
 
   const [mostrarMenu, setMostrarMenu] = useState(false)
   const [animando, setAnimando] = useState(false)
   const scrollPosRef = useRef(0)
+  const [playVideo, setPlayVideo] = useState(false)
+  const { togglePlay, playing } = useAudio();
 
   const { t } = useTranslation()
 
@@ -28,6 +32,13 @@ const About = () => {
   const abrirMenu = () => {
     setMostrarMenu(true)
     document.body.style.overflow = 'hidden'
+  }
+
+  const togglePlayVideo = () => {
+    setPlayVideo(!playVideo)
+    if (playing) {
+      togglePlay();
+    }
   }
 
   const cerrarMenu = () => {
@@ -52,7 +63,7 @@ const About = () => {
 
       <>
         {
-          mostrarMenu && <Menu onClose={cerrarMenu} className={animando ? 'animate-slide-up' : 'animate-slide-down'} />
+          mostrarMenu && <Menu className={animando ? 'animate-slide-up' : 'animate-slide-down'} />
         }
         <div id='top' className='pt-5 xl:pt-8 '>
           <div className='container mx-auto px-10 xl:px-0 flex flex-col md:flex-row min-h-[600px] md:min-h-[700px] justify-center items-center relative'>
@@ -75,8 +86,17 @@ const About = () => {
               <p>{t('about3')}</p>
             </div>
           </div>
-          <div className='xl:my-30 mb-10'>
-            <video controls src={videoAbout2} ></video>
+          <div className='xl:my-30 mb-10 xl:h-[900px]'>
+            {
+              playVideo ? (
+                <video controls autoPlay src={videoAbout2} ></video>
+              ) : (
+                <div className='relative'>
+                  <img onClick={togglePlayVideo} className='xl:h-[900px] w-full hover:cursor-pointer' src={aboutImg3} alt="" />
+                  <img src={playBtn} onClick={togglePlayVideo} className='absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-20 hover:cursor-pointer w-24 md:w-auto' alt="" />
+                </div>
+              )
+            }
           </div>
           <div className='w-full px-10 xl:px-0 xl:w-11/12 ml-auto flex flex-col xl:flex-row gap-10 2xl:gap-20 mb-20 h-fit'>
             <div className='flex flex-col 2xl:pl-10 2xl:pr-40 xl:justify-center justify-start items-center gap-6 w-full xl:w-1/2 text-2xl font-light'>
@@ -86,7 +106,7 @@ const About = () => {
             <img className='cover xl:ml-auto' src={aboutImg4} alt="" />
           </div>
         </div>
-        <div className='container mx-auto py-10 flex flex-col xl:flex-row gap-10 mt-5 w-full items-center justify-center w-full xl:relative'>
+        <div className='container mx-auto py-10 flex flex-col xl:flex-row gap-10 mt-5 items-center justify-center w-full xl:relative'>
           <Redes color={'negro'} />
           <BackTop color={'negro'} />
         </div>

@@ -1,12 +1,22 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState  } from 'react'
 import Menu from '../components/Menu';
 import Navbar from '../components/Navbar';
 import logoBlanco from '../assets/logoBlanco.png'
 import videoFondo from '../assets/AC_Inicio_1.mp4'
+import { useAudio } from '../components/AudioContext';
 
 const Home = () => {
     const [mostrarMenu, setMostrarMenu] = useState(false)
     const [animando, setAnimando] = useState(false)
+    const { playing, playFromStart } = useAudio();
+
+    useEffect(() => {
+      if(!playing){
+        playFromStart();
+      }
+    }, []);
+    
+
 
     const cerrarMenu = () => {
         setAnimando(true)
@@ -23,22 +33,18 @@ const Home = () => {
     return (
         <div className='relative h-screen flex flex-col w-full overflow-hidden'>
 
-            {/* 🎥 Video de Fondo 🎥 */}
             <video
-                autoPlay // Inicia la reproducción automáticamente
-                loop // Hace que el video se repita
-                muted // Silencia el video (necesario para autoPlay en muchos navegadores)
-                playsInline // Recomendado para iOS
+                autoPlay 
+                loop 
+                muted 
+                playsInline 
                 className="absolute inset-0 h-full w-full object-cover z-0" // Posiciona y escala
             >
-                {/* Reemplaza la ruta por la ubicación real de tu archivo de video */}
                 <source src={videoFondo} type="video/mp4" />
                 Tu navegador no soporta la etiqueta de video.
             </video>
             <div className="absolute inset-0 bg-black/50 z-[1]" aria-hidden="true"></div>
-            {/* ⚠️ Nota: 'z-0' en el video asegura que esté detrás del contenido */}
 
-            {/* Contenedor para el contenido que va encima del video */}
             <div className="relative z-10 flex flex-col h-full w-full">
 
                 <Navbar logo={logoBlanco} bgColor={'bg-white'} logoBlanco={logoBlanco} logoNegro={logoBlanco} mostrarMenu={mostrarMenu} className={mostrarMenu ? 'text-white' : 'text-white'} abrirMenu={() => {

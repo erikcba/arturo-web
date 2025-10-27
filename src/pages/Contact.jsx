@@ -6,18 +6,18 @@ import logoBlanco from '../assets/logoBlanco.png'
 import Menu from '../components/Menu'
 import contactImg from '../assets/contactImg.png'
 import Redes from '../components/Redes'
+import { useTranslation } from 'react-i18next'
 
 const Contact = () => {
 
     const [mostrarMenu, setMostrarMenu] = useState(false)
     const [animando, setAnimando] = useState(false)
+    const { t } = useTranslation()
 
     useEffect(() => {
         window.scrollTo(0, 0)
         document.body.style.overflow = 'visible'
     }, [])
-
-
 
     const cerrarMenu = () => {
         setAnimando(true)
@@ -51,10 +51,10 @@ const Contact = () => {
                         <div className='w-full md:w-1/2 flex flex-col md:pl-0 items-start justify-between h-full gap-5 xl:pb-10'>
                             <div className='flex flex-col w-fit 2xl:pt-0'>
                                 <h1 className='text-black text-[2.8rem] md:text-[3.5rem] xl:text-[4.5rem] 2xl:text-[8.5rem] font-xxlight text-lexend uppercase tracking-widest leading-none w-fit text-left'>
-                                    Get in touch
+                                    {t("getIn")} <br /> {t("touch")}
                                 </h1>
                                 <p className='uppercase text-black text-2xl font-semibold text-lexend tracking-widest leading-none w-fit text-left mt-5'>
-                                    /Or just say hello
+                                    {t("orHello")}
                                 </p>
                             </div>
                             <div className='border-b-4 border-white pb-6 w-fit '>

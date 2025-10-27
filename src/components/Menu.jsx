@@ -2,12 +2,11 @@ import React from 'react'
 import { Link } from 'react-router-dom'
 import { useTranslation } from 'react-i18next'
 import Redes from './Redes'
-import BackTop from './BackTop'
-
 
 const Menu = ({ className, onClose }) => {
 
     const { i18n } = useTranslation()
+    const { t } = useTranslation()
 
     const changeLanguage = (lng) => {
         i18n.changeLanguage(lng)
@@ -19,24 +18,25 @@ const Menu = ({ className, onClose }) => {
                 <div className='container h-full mx-auto flex flex-col md:flex-row justify-center items-center pt-20 sm:pt-0 xl:gap-14 gap-24 z-20'>
                     <div className='flex flex-col items-center justify-center gap-10 xl:gap-6 2xl:ml-auto'>
                         <Link to='/'>
-                            <p className='text-white text-3xl 2xl:text-[7.5rem] font-xxlight text-lexend tracking-max leading-none group  hover:bg-white transition-all duration-300 ease-in-out px-0 xl:px-24 hover:text-black'>
+                            <p className={`text-white text-3xl 2xl:text-[7.5rem] uppercase font-xxlight text-lexend ${i18n.language === 'en' ? 'tracking-max' : 'tracking-wide'}  leading-none group  hover:bg-white transition-all duration-300 ease-in-out px-0 xl:px-24 hover:text-black`}>
                                 <span className='text-white tracking-widest text-xs xl:text-4xl font-bold group-hover:text-black'>01/</span>
-                                INDEX</p>
+                                {t('home')} </p>
                         </Link>
                         <Link to='/about'>
-                            <p className='text-white text-3xl 2xl:text-[7.5rem] font-xxlight text-lexend tracking-max leading-none group hover:bg-white transition-all duration-300 ease-in-out px-0 xl:px-24 hover:text-black'>
-                                ABOUT
+                            <p className={`text-white text-3xl 2xl:text-[7.5rem] uppercase font-xxlight text-lexend ${i18n.language === 'en' ? 'tracking-max' : 'tracking-widest'}  leading-none group  hover:bg-white transition-all duration-300 ease-in-out px-0 xl:px-24 hover:text-black`}>
+                                {t('about')}
                                 <span className='text-white tracking-widest text-xs xl:text-4xl font-bold group-hover:text-black'>/02</span>
                             </p>
                         </Link>
                         <Link to='/calendar'>
-                            <p className='text-white text-3xl 2xl:text-[7.5rem] font-xxlight text-lexend tracking-max leading-none group hover:bg-white transition-all duration-300 ease-in-out px-0 xl:px-12 hover:text-black'>
+                            <p className={`text-white text-3xl 2xl:text-[7.5rem] uppercase font-xxlight text-lexend ${i18n.language === 'en' ? 'tracking-max' : 'tracking-widest'}  leading-none group  hover:bg-white transition-all duration-300 ease-in-out px-0 xl:px-24 hover:text-black`}>
                                 <span className='text-white tracking-widest text-xs xl:text-4xl font-bold group-hover:text-black'>03/</span>
-                                CALENDAR</p>
+                                {t('calendar')}
+                            </p>
                         </Link>
                         <Link to='/contact'>
-                            <p className='text-white text-3xl 2xl:text-[7.5rem] font-xxlight text-lexend tracking-max leading-none group hover:bg-white transition-all duration-300 ease-in-out px-0 xl:px-12 hover:text-black'>
-                                CONTACT
+                            <p className={`text-white text-3xl 2xl:text-[7.5rem] uppercase font-xxlight text-lexend ${i18n.language === 'en' ? 'tracking-max' : 'tracking-widest'}  leading-none group  hover:bg-white transition-all duration-300 ease-in-out px-0 xl:px-24 hover:text-black`}>
+                                {t('contact')}
                                 <span className='text-white tracking-widest text-xs xl:text-4xl font-bold group-hover:text-black'>/04</span>
                             </p>
                         </Link>
