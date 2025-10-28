@@ -39,7 +39,7 @@ body {
   cursor: pointer;
 }
 
-.bg-video{
+.bg-video {
   background-image: url('./assets/AC_Inicio_1.mp4');
   background-size: cover;
   background-position: center;
@@ -265,6 +265,170 @@ body {
   }
 }
 
+
+/* Animación de entrada de Izquierda a Derecha (para el texto) */
+@keyframes slideInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-100%);
+    /* Comienza fuera de la pantalla a la izquierda */
+  }
+
+  to {
+    opacity: 1;
+    transform: translateX(0);
+    /* Termina en su posición normal */
+  }
+}
+
+/* Animación de entrada de Derecha a Izquierda (para la imagen) */
+@keyframes slideInRight {
+  from {
+    opacity: 0;
+    transform: translateX(100%);
+    /* Comienza fuera de la pantalla a la derecha */
+  }
+
+  to {
+    opacity: 1;
+    transform: translateX(0);
+    /* Termina en su posición normal */
+  }
+}
+
+/* Clases que usarás en tus componentes */
+.slide-in-left {
+  animation: slideInLeft 1.2s ease-out forwards;
+}
+
+.slide-in-right {
+  animation: slideInRight 1.2s ease-out forwards;
+}
+
+/* Animación de llenado de izquierda a derecha */
+@keyframes backgroundWipe {
+  0% {
+    width: 0%;
+    /* Inicia sin ancho */
+  }
+
+  100% {
+    width: 100%;
+    /* Termina llenando el ancho completo */
+  }
+}
+
+/* Clase base para aplicar el efecto a los elementos de texto */
+.text-wipe-animation {
+  position: relative;
+  /* Necesario para posicionar el pseudo-elemento */
+  display: inline-block;
+  /* O 'block' si quieres que ocupe todo el ancho */
+  color: transparent;
+  /* Hace que el texto sea invisible inicialmente */
+  overflow: hidden;
+  /* Oculta cualquier desbordamiento durante la animación */
+}
+
+/* Pseudo-elemento que se llenará de blanco */
+.text-wipe-animation::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  background-color: white;
+  /* El color de fondo que se deslizará */
+  z-index: -1;
+  /* Se coloca detrás del texto real */
+  animation: backgroundWipe 0.7s ease-in-out forwards;
+  /* Aplica la animación */
+}
+
+/* Pseudo-elemento que mostrará el texto una vez que el fondo haya terminado */
+.text-wipe-animation::after {
+  content: attr(data-text);
+  /* Muestra el texto del atributo data-text */
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  color: black;
+  /* El color final del texto */
+  /* Animación para que el texto aparezca con un retraso */
+  animation: textReveal 0.01s linear forwards;
+  animation-delay: 0.7s;
+  /* Espera a que el fondo termine (0.7s) */
+  opacity: 1;
+  /* Inicia visible */
+}
+
+/* Animación simple para revelar el texto después del llenado */
+@keyframes textReveal {
+  to {
+    opacity: 1;
+  }
+}
+
+/* --- CLASE BASE (Izquierda a Derecha) --- */
+.menu-link-effect {
+  position: relative;
+  transition: color 0.3s ease-in-out;
+  z-index: 1;
+  overflow: hidden;
+}
+
+/* Pseudo-elemento para LTR (Left-to-Right) */
+.menu-link-effect::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0; /* <-- Comienza en el lado IZQUIERDO */
+  height: 100%;
+  width: 0;
+  background-color: white;
+  z-index: -1;
+  transition: width 0.4s ease-out;
+}
+
+/* Acciones LTR */
+.menu-link-effect:hover {
+  color: black !important;
+}
+
+.menu-link-effect:hover::before {
+  width: 100%;
+}
+
+/* --- NUEVA CLASE PARA RTL (Derecha a Izquierda) --- */
+.menu-link-effect-rtl {
+  position: relative;
+  transition: color 0.3s ease-in-out;
+  z-index: 1;
+  overflow: hidden;
+}
+
+/* Pseudo-elemento para RTL (Right-to-Left) */
+.menu-link-effect-rtl::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0; /* <-- CLAVE: Comienza en el lado DERECHO */
+  height: 100%;
+  width: 0;
+  background-color: white;
+  z-index: -1;
+  transition: width 0.4s ease-out;
+}
+
+/* Acciones RTL */
+.menu-link-effect-rtl:hover {
+  color: black !important;
+}
+
+.menu-link-effect-rtl:hover::before {
+  width: 100%; /* El ancho crece hacia la izquierda (desde el 'right: 0') */
+}
 
 @media screen and (max-width: 1441px) {
   .text-8-5 {

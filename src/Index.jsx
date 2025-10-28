@@ -16,17 +16,39 @@ const Index = () => {
       }
     }, []);
 
+    // Clase CSS personalizada para los textos con animación
+    const animationClass = 'text-wipe-animation';
 
     return (
         <Link to='/home' className='bg-black h-screen flex justify-center hover:cursor-default items-center w-full'>
-            <div className='bg-cover bg-hero  bg-no-repeat w-full h-full object-cover z-10' alt="" >
+            <div className='bg-cover bg-hero bg-no-repeat w-full h-full object-cover z-10' alt="" >
                 <div className='z-30 h-full flex justify-end items-center mx-auto px-10 xl:px-0 xl:mr-10'>
                     <div className='text-white flex flex-col gap-1 text-5xl 2xl:[font-size:7.5rem] my-auto font-xxlight text-lexend xl:pr-24 leading-none '>
                         <p>{t('title_line_1')} </p>
                         <p>{t('title_line_2')}</p>
-                        <p className={`${i18n.language === 'es' ? 'bg-white text-black w-fit' : ''}`}>{t('title_line_3')}</p>
+                        
+                        {/* ELEMENTO ANIMADO 1 */}
+                        {i18n.language === 'es' ? (
+                            // Usamos un <div> para aplicar la clase y el data-text
+                            <div className={animationClass} data-text={t('title_line_3')}>
+                                {t('title_line_3')}
+                            </div>
+                        ) : (
+                            <p>{t('title_line_3')}</p> // Si no es español, sigue normal
+                        )}
+                        
                         <p>{t('title_line_4')}</p>
-                        <span className={`${i18n.language === 'en' ? 'bg-white text-black w-fit' : ''}`}>{t('title_line_5')}</span>
+                        
+                        {/* ELEMENTO ANIMADO 2 */}
+                        {i18n.language === 'en' ? (
+                            // Usamos un <div> para aplicar la clase y el data-text
+                            <div className={animationClass} data-text={t('title_line_5')}>
+                                {t('title_line_5')}
+                            </div>
+                        ) : (
+                            <span>{t('title_line_5')}</span> // Si no es inglés, sigue normal
+                        )}
+
                         <p>{t('suffix_text')} </p>
                         <p className='uppercase text-sm xl:text-xl font-light mt-20 blink flex xl:flex-row flex-col items-center justify-start pl-4 gap-4 xl:gap-8'>{t('cta_continue')}<img src={flecha} alt="" /> </p>
                     </div>

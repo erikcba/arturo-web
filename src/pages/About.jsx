@@ -29,6 +29,22 @@ const About = () => {
     document.body.style.overflow = 'visible'
   }, [])
 
+  const [animate, setAnimate] = useState(false);
+
+  useEffect(() => {
+    // Retrasa la aplicación de la clase ligeramente para asegurar el renderizado
+    // y que la animación se dispare.
+    const timer = setTimeout(() => {
+      setAnimate(true);
+    }, 100);
+
+    return () => clearTimeout(timer); // Limpieza
+  }, []);
+
+  // Clases condicionales para aplicar la animación
+  const textAnimationClass = animate ? 'slide-in-left' : 'opacity-0';
+  const imgAnimationClass = animate ? 'slide-in-right' : 'opacity-0';
+
   const abrirMenu = () => {
     setMostrarMenu(true)
     document.body.style.overflow = 'hidden'
@@ -67,12 +83,16 @@ const About = () => {
         }
         <div id='top' className='pt-5 xl:pt-8 '>
           <div className='container mx-auto px-10 xl:px-0 flex flex-col md:flex-row min-h-[600px] md:min-h-[700px] justify-center items-center relative'>
-            <div className='flex flex-col gap-3 xl:gap-8 z-20 h-fit absolute md:left-10 xl:left-30 -top-5 md:top-70 2xl:top-40 bottom-0'>
+            <div className={`flex flex-col gap-3 xl:gap-8 z-20 h-fit absolute md:left-10 xl:left-30 -top-5 md:top-70 2xl:top-40 bottom-0 ${textAnimationClass}`}
+              style={{ opacity: 0 }}>
               <h1 className='text-black text-4xl text-8-5 font-xxlight text-lexend tracking-widest leading-none'>ARTURO</h1>
               <h1 className='text-white text-4xl text-8-5 font-xxlight text-lexend tracking-widest leading-none py-2 bg-black ml-auto w-fit px-6'>/CASTRO</h1>
               <h1 className='text-black text-4xl text-8-5 font-xxlight text-lexend tracking-widest leading-none'>NOGUERAS</h1>
             </div>
-            <img className="absolute md:right-5 xl:right-10 px-10 xl:px-0 z-10 -bottom-6 xl:top-15" src={aboutImg} alt="" />
+            <img className={`absolute md:right-5 xl:right-10 px-10 xl:px-0 z-10 -bottom-6 xl:top-15 ${imgAnimationClass}`}
+              src={aboutImg}
+              alt="Imagen de perfil"
+              style={{ opacity: 0 }} />
           </div>
           <div className='w-full xl:w-5/7 px-10 xl:px-0 container mx-auto pt-20 xl:pt-44  md:py-20 flex justify-center items-center'>
             <p className='text-2xl xl:text-4xl 2xl:px-35 xl:leading-12 font-light text-left md:text-center'>
