@@ -32,9 +32,12 @@ const Contact = () => {
         setMostrarMenu(true)
         document.body.style.overflow = 'hidden'
     }
+
+    const animationClass = 'text-wipe-animation2'
+
     return (
         <div className='bg-gris h-auto overflow-hidden md:h-[100dvh]'>
-            <Navbar logoBlanco={logoBlanco} logoNegro={logoNegro} colorLogo={mostrarMenu ? 'white': 'black'} bgColor={mostrarMenu ? 'bg-white' : 'bg-black'} mostrarMenu={mostrarMenu} className={mostrarMenu ? 'text-white' : 'text-black md:text-white'} abrirMenu={() => {
+            <Navbar logoBlanco={logoBlanco} logoNegro={logoNegro} colorLogo={mostrarMenu ? 'white' : 'black'} bgColor={mostrarMenu ? 'bg-white' : 'bg-black'} mostrarMenu={mostrarMenu} className={mostrarMenu ? 'text-white' : 'text-black md:text-white'} abrirMenu={() => {
                 if (mostrarMenu) {
                     cerrarMenu()
                 } else {
@@ -58,9 +61,11 @@ const Contact = () => {
                                 </p>
                             </div>
                             <div className='border-b-4 border-white pb-6 w-fit '>
-                                <p className='bg-black  text-white text-xl md:text-2xl 2xl:text-4xl font-medium text-lexend  leading-none w-fit text-center px-5 py-5 '>
-                                    info@arturoguitar.com
-                                </p>
+                                <div className='w-fit text-center'>
+                                    <p className={`text-xl md:text-2xl 2xl:text-4xl px-5 py-5 font-medium text-lexend leading-none ${animationClass}`} data-text={t("email")}>
+                                        {t("email")}
+                                    </p>
+                                </div>
                             </div>
                             <img className='w-auto xl:hidden' src={contactImg} alt="" />
                             <div className='w-full sm:w-3/4 xl:pb-20'>

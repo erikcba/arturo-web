@@ -5,7 +5,7 @@ import Home from "./pages/Home"
 import Index from "./Index"
 import Calendar from "./pages/Calendar"
 import Contact from "./pages/Contact"
-import { AudioProvider } from "./components/AudioContext"
+import { AudioProvider } from "./components/AudioProvider"
 
 function App() {
 

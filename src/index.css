@@ -363,6 +363,40 @@ body {
   /* Inicia visible */
 }
 
+.text-wipe-animation2 {
+  position: relative; 
+  display: inline-block; /* <-- ¡Fundamental! */
+  color: transparent !important; /* Asegura que el texto original se oculte */
+  overflow: hidden; 
+}
+
+.text-wipe-animation2::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  /* Estas propiedades ahora cubren el ancho/alto del texto, pero como el padding está fuera,
+     el fondo negro se deslizará correctamente sobre el área donde aparecerá el texto. */
+  height: 100%;
+  background-color: black;
+  z-index: 1;
+  animation: backgroundWipe 0.7s ease-in-out forwards;
+}
+
+/* Pseudo-elemento que muestra el texto (Texto Blanco) */
+.text-wipe-animation2::after {
+  content: attr(data-text);
+  position: absolute;
+  left: 0;
+  right: 0;
+  height: 100%;
+  color: white;
+  animation: textReveal 0.01s linear forwards;
+  animation-delay: 0.7s;
+  opacity: 0;
+  z-index: 2;
+}
+
 /* Animación simple para revelar el texto después del llenado */
 @keyframes textReveal {
   to {
