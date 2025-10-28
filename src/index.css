@@ -296,6 +296,20 @@ body {
   }
 }
 
+@keyframes slideInTop {
+  from {
+    opacity: 0;
+    transform: translateY(100%);
+    /* Comienza fuera de la pantalla a la derecha */
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+    /* Termina en su posición normal */
+  }
+}
+
 /* Clases que usarás en tus componentes */
 .slide-in-left {
   animation: slideInLeft 1.2s ease-out forwards;
@@ -303,6 +317,9 @@ body {
 
 .slide-in-right {
   animation: slideInRight 1.2s ease-out forwards;
+}
+.slide-in-top {
+  animation: slideInTop 0.5s ease-out forwards;
 }
 
 /* Animación de llenado de izquierda a derecha */

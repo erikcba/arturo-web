@@ -34,6 +34,8 @@ const Contact = () => {
     }
 
     const animationClass = 'text-wipe-animation2'
+    const animationTop = 'slide-in-top'
+    const animationLeft = 'slide-in-left'
 
     return (
         <div className='bg-gris h-auto overflow-hidden md:h-[100dvh]'>
@@ -48,11 +50,11 @@ const Contact = () => {
                 mostrarMenu && <Menu className={animando ? 'animate-slide-up' : 'animate-slide-down'} />
             }
             <div id='top' className='flex flex-col px-4 xl:h-[100svh] sm:px-8 pb-10 md:pb-0 md:pt-0'>
-                <img className='w-auto xl:h-screen xl:absolute top-0 left-0 hidden z-10 xl:block' src={contactImg} alt="" />
+                <img className={`w-auto xl:h-screen xl:absolute top-0 left-0 hidden z-10 xl:block ${animationLeft} `} src={contactImg} alt="" />
                 <div className='container mx-auto 2xl:pt-10'>
                     <div className='flex flex-row items-center h-auto xl:h-[711px] justify-center md:justify-end w-full gap-20  '>
                         <div className='w-full md:w-1/2 flex flex-col md:pl-0 items-start justify-between h-full gap-5 xl:pb-10'>
-                            <div className='flex flex-col w-fit 2xl:pt-0'>
+                            <div className={`flex flex-col w-fit 2xl:pt-0 ${animationTop} `}>
                                 <h1 className='text-black text-[2.8rem] md:text-[3.5rem] xl:text-[4.5rem] 2xl:text-[8.5rem] font-xxlight text-lexend uppercase tracking-widest leading-none w-fit text-left'>
                                     {t("getIn")} <br /> {t("touch")}
                                 </h1>
@@ -68,7 +70,7 @@ const Contact = () => {
                                 </div>
                             </div>
                             <img className='w-auto xl:hidden' src={contactImg} alt="" />
-                            <div className='w-full sm:w-3/4 xl:pb-20'>
+                            <div className={`w-full sm:w-3/4 xl:pb-20 ${animationTop} `}>
                                 <Redes color={'negro'} justify='justify-center xl:justify-between' gap='gap-10 xl:gap-0' />
                             </div>
                         </div>
