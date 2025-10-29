@@ -52,7 +52,7 @@ const Redes = ({ color = 'blanco', justify = 'justify-center', gap = 'gap-10  2x
                 href='https://app.cicadamusic.net/concert/671b74074fe5141dd0c21a94/store'
                 target='_blank'
                 rel='noreferrer'
-                className={`text-${color === 'negro' ? 'black' : 'white'} uppercase text-xl md:text-2xl font-light md:font-medium text-lexend leading-none w-fit text-center hover:scale-110 transition-transform duration-300`}
+                className={`text-${color === 'negro' ? 'black' : 'white'} uppercase text-lg xl:text-2xl font-light md:font-medium text-lexend leading-none w-fit text-center hover:scale-110 transition-transform duration-300`}
             >
                 {t('store')}
             </a>

@@ -501,4 +501,11 @@ body {
   .bg-hero {
     background-image: url('./assets/bgMobile.png');
   }
+
+  .bg-contact {
+    background-image: url('./assets/calendarBgMobile.png');
+    background-position: center top;
+    background-size: contain;
+    background-repeat: no-repeat;
+  }
 }

@@ -61,7 +61,6 @@ const Home = () => {
                     }
                     <div className='container mx-auto my-auto w-full flex flex-col px-10 xl:px-0 gap-12 lg:gap-20 xl:gap-42'>
                         <h1 className='text-white text-3xl lg:text-6xl xl:[font-size:7.5rem] font-extralight text-lexend tracking-max leading-none sm:ml-30 xl:ml-0'>ARTURO</h1>
-                        {/* Puedes quitar el 'bg-zinc-950/30' o mantenerlo para darle más contraste al texto sobre el video */}
                         <h1 className='text-white text-3xl lg:text-6xl xl:[font-size:7.5rem] font-extralight text-lexend tracking-max leading-none ml-10 sm:ml-80 xl:ml-auto bg-zinc-950/30 w-fit pl-4 py-4'>CASTRO/</h1>
                     </div>
                 </>

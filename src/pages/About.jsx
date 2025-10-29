@@ -82,19 +82,19 @@ const About = () => {
           mostrarMenu && <Menu className={animando ? 'animate-slide-up' : 'animate-slide-down'} />
         }
         <div id='top' className='pt-5 xl:pt-8 '>
-          <div className='container mx-auto px-10 xl:px-0 flex flex-col md:flex-row min-h-[600px] md:min-h-[700px] justify-center items-center relative'>
-            <div className={`flex flex-col gap-3 xl:gap-8 z-20 h-fit absolute md:left-10 xl:left-30 -top-5 md:top-70 2xl:top-40 bottom-0 ${textAnimationClass}`}
+          <div className='container mx-auto px-10 xl:px-0 flex flex-col md:flex-row min-h-[600px] xl:min-h-[700px] justify-center items-center relative'>
+            <div className={`flex flex-col gap-3 xl:gap-8 z-20 h-fit absolute md:left-10 xl:left-30 -top-5 md:top-30 2xl:top-40 bottom-0 ${textAnimationClass}`}
               style={{ opacity: 0 }}>
-              <h1 className='text-black text-4xl text-8-5 font-xxlight text-lexend tracking-widest leading-none'>ARTURO</h1>
-              <h1 className='text-white text-4xl text-8-5 font-xxlight text-lexend tracking-widest leading-none py-2 bg-black ml-auto w-fit px-6'>/CASTRO</h1>
-              <h1 className='text-black text-4xl text-8-5 font-xxlight text-lexend tracking-widest leading-none'>NOGUERAS</h1>
+              <h1 className='text-black text-8-5 font-xxlight text-lexend tracking-widest leading-none'>ARTURO</h1>
+              <h1 className='text-white text-8-5 font-xxlight text-lexend tracking-widest leading-none py-2 bg-black ml-auto w-fit px-6'>/CASTRO</h1>
+              <h1 className='text-black text-8-5 font-xxlight text-lexend tracking-widest leading-none'>NOGUERAS</h1>
             </div>
-            <img className={`absolute md:right-5 xl:right-10 px-10 xl:px-0 z-10 -bottom-6 xl:top-15 ${imgAnimationClass}`}
+            <img className={`absolute md:right-5 md:w-[500px] 2xl:w-auto xl:right-10 px-10 xl:px-0 z-10 -bottom-6 top-34 md:-top-12 2xl:top-15 ${imgAnimationClass}`}
               src={aboutImg}
               alt="Imagen de perfil"
               style={{ opacity: 0 }} />
           </div>
-          <div className='w-full xl:w-5/7 px-10 xl:px-0 container mx-auto pt-20 xl:pt-44  md:py-20 flex justify-center items-center'>
+          <div className='w-full xl:w-5/7 px-10 xl:px-0 container mx-auto pt-0 md:pb-10 2xl:pt-44 flex justify-center items-center'>
             <p className='text-2xl xl:text-4xl 2xl:px-35 xl:leading-12 font-light text-left md:text-center'>
               <Trans i18nKey="about1" components={{ 1: <strong className="font-semibold text-black" /> }} />
             </p>
@@ -123,10 +123,10 @@ const About = () => {
               <p>{t('about4')}</p>
               <p>{t('about5')}</p>
             </div>
-            <img className='cover xl:ml-auto' src={aboutImg4} alt="" />
+            <img className='cover xl:ml-auto xl:w-3/5 2xl:w-full' src={aboutImg4} alt="" />
           </div>
         </div>
-        <div className='container mx-auto py-10 flex flex-col xl:flex-row gap-10 mt-5 items-center justify-center w-full xl:relative'>
+        <div className='container mx-auto py-10 flex flex-col xl:flex-row gap-10 mt-5 items-center px-10 sm:px-0 justify-center w-full xl:relative'>
           <Redes color={'negro'} />
           <BackTop color={'negro'} />
         </div>
