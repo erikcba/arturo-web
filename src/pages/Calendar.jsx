@@ -50,11 +50,11 @@ const Calendar = () => {
                 <div id='top' className='pt-8 md:pt-10 px-10 sm:px-0'>
                     <div className='container mx-auto'>
                         <div className='flex flex-col gap-8 w-full items-center justify-center '>
-                            <div className='w-full xl:w-4/6 md:px-10 flex flex-col gap-5'>
+                            <div className='w-full xl:w-5/7  flex flex-col gap-5'>
                                 <h1 className='text-white uppercase text-8-5 font-xxlight text-lexend tracking-widest leading-none w-full text-center'>
                                     {t("calendar")}
                                 </h1>
-                                <div className='flex flex-col gap-10 mt-10 '>
+                                <div className='flex flex-col md:px-14 gap-10 mt-10 '>
                                     <CalendarCard date={"19 November 2025, 00hs"} festival={"Reading Fringe Festival"} place={"Düsseldorf, Germany"} />
                                     <CalendarCard date={"19 November 2025, 00hs"} festival={"Reading Fringe Festival"} place={"Düsseldorf, Germany"} />
                                     <CalendarCard date={"19 November 2025, 00hs"} festival={"Reading Fringe Festival"} place={"Düsseldorf, Germany"} />
