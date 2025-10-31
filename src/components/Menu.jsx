@@ -20,9 +20,9 @@ const Menu = ({ className, onClose }) => {
         <div className={`w-screen fixed inset-0 z-30 min-h-screen bg-black overflow-y-auto ${className}`}>
             <div className='flex flex-col h-full pt-20 md:pt-40 xl:pt-26 '>
                 <div className='container h-full mx-auto flex flex-col lg:flex-row justify-center items-center pt-20 sm:pt-0 xl:gap-14 gap-24 z-20'>
-                    <div className='flex flex-col items-center justify-center gap-10 xl:gap-6 lg:ml-40 2xl:ml-auto'>
+                    <div className='flex flex-col items-center justify-center gap-10 xl:gap-6 lg:ml-40 xl:ml-20 2xl:ml-auto'>
                         <Link to='/' onClick={onClose}>
-                            <p className={`text-white text-3xl md:text-5xl 2xl:text-[7.5rem] uppercase font-xxlight text-lexend ${i18n.language === 'en' ? 'tracking-max' : 'tracking-wide'} leading-none group px-0 xl:px-24 ${wipeHoverClassLTR}`}>
+                            <p className={`text-white text-3xl md:text-5xl xl:text-[5.5rem] 2xl:text-[7.5rem] uppercase font-xxlight text-lexend ${i18n.language === 'en' ? 'tracking-max' : 'tracking-wide'} leading-none group px-0 xl:px-24 ${wipeHoverClassLTR}`}>
                                 <span className='text-white tracking-widest text-xs xl:text-4xl font-bold group-hover:text-black'>01/</span>
                                 {t('home')}
                             </p>
@@ -30,7 +30,7 @@ const Menu = ({ className, onClose }) => {
 
                         {/* BOTÓN ABOUT (Derecha a Izquierda) */}
                         <Link to='/about' onClick={onClose}>
-                            <p className={`text-white text-3xl md:text-5xl 2xl:text-[7.5rem] uppercase font-xxlight text-lexend ${i18n.language === 'en' ? 'tracking-max' : 'tracking-widest'} leading-none group px-0 xl:px-24 ${wipeHoverClassRTL}`}>
+                            <p className={`text-white text-3xl md:text-5xl xl:text-[5.5rem] 2xl:text-[7.5rem] uppercase font-xxlight text-lexend ${i18n.language === 'en' ? 'tracking-max' : 'tracking-widest'} leading-none group px-0 xl:px-24 ${wipeHoverClassRTL}`}>
                                 {t('about')}
                                 <span className='text-white tracking-widest text-xs xl:text-4xl font-bold group-hover:text-black'>/02</span>
                             </p>
@@ -38,7 +38,7 @@ const Menu = ({ className, onClose }) => {
 
                         {/* BOTÓN CALENDAR (Izquierda a Derecha) */}
                         <Link to='/calendar' onClick={onClose}>
-                            <p className={`text-white text-3xl md:text-5xl 2xl:text-[7.5rem] uppercase font-xxlight text-lexend ${i18n.language === 'en' ? 'tracking-max' : 'tracking-widest'} leading-none group px-0 xl:px-24 ${wipeHoverClassLTR}`}>
+                            <p className={`text-white text-3xl md:text-5xl xl:text-[5.5rem] 2xl:text-[7.5rem] uppercase font-xxlight text-lexend ${i18n.language === 'en' ? 'tracking-max' : 'tracking-widest'} leading-none group px-0 xl:px-24 ${wipeHoverClassLTR}`}>
                                 <span className='text-white tracking-widest text-xs xl:text-4xl font-bold group-hover:text-black'>03/</span>
                                 {t('calendar')}
                             </p>
@@ -46,7 +46,7 @@ const Menu = ({ className, onClose }) => {
 
                         {/* BOTÓN CONTACT (Derecha a Izquierda) */}
                         <Link to='/contact' onClick={onClose}>
-                            <p className={`text-white text-3xl md:text-5xl 2xl:text-[7.5rem] uppercase font-xxlight text-lexend ${i18n.language === 'en' ? 'tracking-max' : 'tracking-widest'} leading-none group px-0 xl:px-24 ${wipeHoverClassRTL}`}>
+                            <p className={`text-white text-3xl md:text-5xl xl:text-[5.5rem] 2xl:text-[7.5rem] uppercase font-xxlight text-lexend ${i18n.language === 'en' ? 'tracking-max' : 'tracking-widest'} leading-none group px-0 xl:px-24 ${wipeHoverClassRTL}`}>
                                 {t('contact')}
                                 <span className='text-white tracking-widest text-xs xl:text-4xl font-bold group-hover:text-black'>/04</span>
                             </p>

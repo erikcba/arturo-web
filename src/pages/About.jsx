@@ -118,12 +118,12 @@ const About = () => {
               )
             }
           </div>
-          <div className='w-full px-10 xl:px-0 xl:w-11/12 ml-auto flex flex-col xl:flex-row gap-10 2xl:gap-20 mb-20 h-fit'>
-            <div className='flex flex-col 2xl:pl-10 2xl:pr-40 xl:justify-center justify-start items-center gap-6 w-full xl:w-1/2 text-2xl font-light'>
+          <div className='w-full px-10 min-[1380px]:px-0 min-[1380px]:w-11/12 ml-auto flex flex-col min-[1380px]:flex-row gap-10 2xl:gap-20 mb-20 h-fit'>
+            <div className='flex flex-col 2xl:pl-10 min-[1680px]:pr-20  min-[1380px]:justify-center justify-start items-center gap-6 w-full min-[1380px]:w-1/2 text-2xl font-light'>
               <p>{t('about4')}</p>
               <p>{t('about5')}</p>
             </div>
-            <img className='cover xl:ml-auto xl:w-3/5 2xl:w-full' src={aboutImg4} alt="" />
+            <img className='cover min-[1380px]:ml-auto min-[1380px]:w-3/5 min-[1680px]:w-full' src={aboutImg4} alt="" />
           </div>
         </div>
         <div className='container mx-auto py-10 flex flex-col xl:flex-row gap-10 mt-5 items-center px-10 sm:px-0 justify-center w-full xl:relative'>
